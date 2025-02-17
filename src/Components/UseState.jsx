@@ -6,53 +6,72 @@ import { useState } from "react"
 
 export default function UseState() {
 
-    const [color, setColor] = useState("black")
-    const [car, setCar] = useState({
-        brand: "Bmw",
-        color: "black",
-        year: "2026",
+    // const [color, setColor] = useState("green")
+
+    
+
+    // const updateColor = () => {
+    //     setColor("black")
         
-    })
+    // }
+    // const [color, setColor] = useState("black")
+    // const [car, setCar] = useState({
+    //     brand: "Bmw",
+    //     color: "black",
+    //     year: "2026",
+        
+    // })
 
-    const [count, setCount] = useState(0)
+  
+    // const [count, setCount] = useState(0)
 
-    const updateColor = () => {
-        setColor("green")
-    };
+    // const updateColor = () => {
+    //     setColor("green")
+    // };
 
-    const changeColor = () => {
-        setCar((car) => {
-            return {
-                ...car, brand:"ferrari",
-            }
-        })
-    }
+    // const changeColor = () => {
+    //     setCar((car) => {
+    //         return {
+    //             ...car, brand:"ferrari",
+    //         }
+    //     })
+    // }
 
-    const updateCount = () => {
-        setCount((prev) => {
-            return prev + 1
-        })
-    }
+   
+
+
+    // const updateCount = () => {
+    //     setCount((prev) => {
+    //         return prev + 1
+    //     })
+    // }
     return (
-        <>
-            <div>
+      <>
+        {/* <div>
                 <h1>Hello, useState!</h1>
                 <p>This component demonstrates the useState hook.</p>
                 <p>My favourite Color is {color}</p>
                 <button onClick={updateColor}> green</button>
-            </div>
-
+            </div> */}
+        {/* 
             <div>
+                <h1>Update color</h1>
+                <p>I love color { color}</p>
+                <button onClick={updateColor}>blue</button>
+            </div> */}
+
+        {/* <div>
                 <h1>my favourite ride is {car.brand}</h1>
                 <h2>it is the {car.year} {car.color} i want to buy</h2>
                 <button onClick={changeColor}>car</button>
-            </div>
+            </div> */}
 
-            <div>
+        {/* <div>
                 <h1>Count:{count}</h1>
                 <button onClick={updateCount}> Increase</button>
-            </div>
-        
-        </>
-    )
+            </div> */}
+
+       
+      </>
+    );
 }

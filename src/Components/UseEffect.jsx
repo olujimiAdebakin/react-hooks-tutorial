@@ -9,25 +9,40 @@
 import { useEffect, useState } from "react";
 
 export default function UseEffect() {
-  const [count, setCounter] = useState(0);
-  const [name, setName] = useState("lekan"); // Initialize name as a string
+  // const [count, setCounter] = useState(0);
+  const [data, setData] = useState([])
+  // const [name, setName] = useState("lekan"); 
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setCounter((count) => count + 1);
+  //     setName("lekan updated");
+  //   }, 2000);
+  // }, [count, name]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setCounter((count) => count + 1);
-      setName("lekan updated");
-    }, 2000);
-  }, [count, name]);
+    fetch("https://jsonplaceholder.typicode.com/posts").then((res) => res.json())
+      .then((json) => setData(json));
+  },[]);
 
   return (
     <>
-      <div>
+      {/* <div>
         <h1>Hello, useEffect!</h1>
         <p>This component demonstrates the useEffect hook.</p>
       </div>
 
       <h1>I have rendered {count} times!</h1>
-      <h1>I am {name}</h1>
+      <h1>I am {name}</h1> */}
+ 
+       <div>
+         <h1>Post</h1>
+         <ul>
+           {data.map((item) => (
+          <li key={item.id}>{item.title}</li>
+         ))}
+         </ul>
+       </div>
     </>
   );
 }
